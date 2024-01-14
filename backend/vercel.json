@@ -8,8 +8,8 @@
     ],
     "routes": [
       {
-        "src": "/api/(.*)",
-        "dest": "/"
+        "src": "/(.*)",
+        "dest": "/api/v1/movies"
       }
     ]
 }
