@@ -8,7 +8,7 @@ const  app = express();
 app.use(cors()); /* enable the communication between the browser and server */ 
 app.use(express.json()); // get access to req.body
 // api
-app.use("/", movies);
+app.use("/api/v1/movies", movies);
 // 4O4
 app.use('*', (req,res)=>{
 res.status(404).json({error: "not found"})
