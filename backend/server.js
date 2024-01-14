@@ -16,8 +16,6 @@ app.use(express.json()); // get access to req.body
 // api
 app.use("/api/v1/movies", movies);
 // 4O4
-app.use('*', (req,res)=>{
-res.status(404).json({error: "not found"})
-});
+
 //Export the server 
 export default app;
