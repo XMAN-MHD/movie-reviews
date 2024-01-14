@@ -7,7 +7,7 @@ const  app = express();
 // middlewares
 app.use(cors(
   {
-    origin: ["movie-reviews-frontend-beryl.vercel.app"],
+    origin: ["https://movie-reviews-frontend-beryl.vercel.app"],
     methods: [ "POST", "GET"], 
     credentials: true
   }
