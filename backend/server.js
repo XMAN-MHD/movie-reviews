@@ -5,8 +5,13 @@ import movies from './api/movies.route.js'; //get access to movies routes
 // create a server using express 
 const  app = express();
 // middlewares
-app.use(cors()); // enable the communication between the browser and server
-app.get("/", (req, res)=>{res.setHeader("Access-Control-Allow-Credentials", "true"); res.send("API is running");})
+app.use(cors(
+  {
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: [ "POST", "GET"], 
+    credentials: true
+  }
+)); /* enable the communication between the browser and server */ 
 app.use(express.json()); // get access to req.body
 // api
 app.use("/api/v1/movies", movies);
