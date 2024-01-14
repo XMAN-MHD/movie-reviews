@@ -1,11 +1,12 @@
 // Import modules
 import express from 'express'; //create and manage your server
-import cors from 'cors'; //let the browser allow the client to talk to rest api
+import cors from 'cors'; //let the browser allow the client to talk to the rest API
 import movies from './api/movies.route.js'; //get access to movies routes
 // create a server using express 
 const  app = express();
 // middlewares
 app.use(cors()); // enable the communication between the browser and server
+app.get("/", (req, res)=>{res.setHeader("Access-Control-Allow-Credentials", "true"); res.send("API is running");})
 app.use(express.json()); // get access to req.body
 // api
 app.use("/api/v1/movies", movies);
@@ -13,5 +14,5 @@ app.use("/api/v1/movies", movies);
 app.use('*', (req,res)=>{
 res.status(404).json({error: "not found"})
 });
-// export the server 
+//Export the server 
 export default app;
